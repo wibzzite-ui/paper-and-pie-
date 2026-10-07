@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paper &amp; Pie | Where Stories Meet Flavors • Bangalore's Artisan Cafe &amp; Creator Sanctuary</title>
+  <meta name="description" content="Sanctuary for book lovers, coffee enthusiasts, and pie aficionados in Bangalore with locations in Indiranagar, Whitefield, and HSR Layout. Handcrafted pies, artisanal coffee, curated library, conference rooms & podcast recording studios.">
+  <meta name="keywords" content="Paper and Pie, Bangalore cafe, Indiranagar cafe, Whitefield cafe, HSR Layout cafe, artisanal coffee, handcrafted pies, conference room Bangalore, podcast studio Bangalore, work friendly cafe">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.paperandpie.in/">
+  <meta property="og:title" content="Paper &amp; Pie | Books • Coffee • Pies • Creator Space">
+  <meta property="og:description" content="Where Stories Meet Flavors. Experience handcrafted pies, artisanal coffee, and work-friendly conference rooms across Bangalore.">
+  <meta property="og:image" content="assets/d20414b2886cba74e77089b18926cd4af00c979e.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Paper &amp; Pie | Bangalore">
+  <meta name="twitter:description" content="Where Stories Meet Flavors. Books • Coffee • Pies • Conference &amp; Podcast Studio.">
+  <meta name="twitter:image" content="assets/d20414b2886cba74e77089b18926cd4af00c979e.jpg">
+
+  <link rel="canonical" href="https://www.paperandpie.in/">
+  <link rel="icon" type="image/jpeg" href="assets/142dfedc7e25e8410d68aa7de8a95856b1310416.jpg">
+
+  <!-- Preload hero image for fast LCP -->
+  <link rel="preload" as="image" href="assets/d20414b2886cba74e77089b18926cd4af00c979e.jpg" fetchpriority="high">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,100..1000&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons (pinned stable) -->
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <!-- GSAP Animation Engine for DepthCarousel -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+  <!-- Sticky Luxury Navigation Bar -->
+
+  <header class="navbar" id="navbar">
+    <div class="container navbar-container">
+      <!-- Brand Logo -->
+      <a href="#" class="brand-logo-link" aria-label="Paper &amp; Pie Home">
+        <img src="assets/142dfedc7e25e8410d68aa7de8a95856b1310416.jpg" alt="Paper and Pie Cafe Logo" class="brand-logo-img" fetchpriority="high">
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#menu" class="nav-link">Artisan Menu</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#conference" class="nav-link">Conference &amp; Studio</a>
+        <a href="#locations" class="nav-link">Bangalore Outlets</a>
+        <a href="#social" class="nav-link">Community</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Nav CTA & Quick Controls -->
+      <div class="nav-actions">
+        <!-- Primary Reservation CTA -->
+        <button class="btn-primary nav-cta-btn" id="nav-reserve-btn" onclick="openReservationModal()">
+          <span>Reserve Space</span>
+          <i data-lucide="arrow-up-right" style="width:16px;height:16px;"></i>
+        </button>
+
+        <!-- Mobile Drawer Toggle -->
+        <button class="mobile-toggle-btn" id="mobile-menu-btn" aria-label="Open Navigation Menu">
+          <i data-lucide="menu" style="width:22px;height:22px;"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay & Menu -->
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-header">
+      <img src="assets/142dfedc7e25e8410d68aa7de8a95856b1310416.jpg" alt="Paper &amp; Pie" class="mobile-drawer-logo">
+      <button class="btn-icon" id="drawer-close-btn" aria-label="Close menu">
+        <i data-lucide="x" style="width:20px;height:20px;"></i>
+      </button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="#about" class="mobile-nav-link">About the Sanctuary</a></li>
+      <li><a href="#menu" class="mobile-nav-link">Artisan Menu</a></li>
+      <li><a href="#gallery" class="mobile-nav-link">Photo Gallery</a></li>
+      <li><a href="#conference" class="mobile-nav-link">Conference &amp; Studio</a></li>
+      <li><a href="#locations" class="mobile-nav-link">Bangalore Outlets</a></li>
+      <li><a href="#social" class="mobile-nav-link">Community</a></li>
+      <li><a href="#contact" class="mobile-nav-link">Contact &amp; Hours</a></li>
+    </ul>
+    <div class="mobile-drawer-footer">
+      <button class="btn-primary mobile-drawer-btn" onclick="openReservationModal(); closeMobileDrawer();">
+        <span>Book Table / Pod</span>
+        <i data-lucide="calendar" style="width:16px;height:16px;"></i>
+      </button>
+      <a href="tel:+919035700874" class="btn-secondary mobile-drawer-btn">
+        <i data-lucide="phone" style="width:16px;height:16px;"></i>
+        <span>+91 90357 00874</span>
+      </a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION (DRIBBLE RESTAURANT EDITORIAL COMPOSITION)
+         ========================================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="hero-bg-accent"></div>
+      <div class="container hero-grid">
+        <!-- Hero Text Content -->
+        <div class="hero-content">
+          <div class="pill-badge">
+            <span class="pill-badge-dot"></span>
+            <span>Bengaluru's Artisan Coffee &amp; Creator Sanctuary</span>
+          </div>
+
+          <h1 class="hero-title">
+            Where <span class="highlight-accent">Stories</span> Meet <span class="highlight-accent">Flavors</span>.
+          </h1>
+
+          <div class="hero-subtitle">
+            <span>Cafe</span>
+            <span class="hero-subtitle-separator">✦</span>
+            <span>Italian</span>
+            <span class="hero-subtitle-separator">✦</span>
+            <span>Continental</span>
+            <span class="hero-subtitle-separator">✦</span>
+            <span>Handcrafted Pies</span>
+            <span class="hero-subtitle-separator">✦</span>
+            <span>Specialty Coffee</span>
+            <span class="hero-subtitle-separator">✦</span>
+            <span>Desserts &amp; Shakes</span>
+          </div>
+
+          <p class="hero-description">
+            Step into Bangalore's premier sanctuary crafted for book lovers, coffee purists, and pie aficionados. Freshly baked culinary craft meets quiet reading nooks and high-speed creator suites in Indiranagar, Whitefield, and HSR Layout.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#menu" class="btn-primary">
+              <span>Explore Handcrafted Menu</span>
+              <i data-lucide="arrow-right" style="width:18px;height:18px;"></i>
+            </a>
+            <a href="#gallery" class="btn-secondary">
+              <i data-lucide="image" style="width:18px;height:18px; color:var(--color-accent);"></i>
+              <span>View Gallery</span>
+            </a>
+            <button class="btn-secondary" onclick="openReservationModal()">
+              <i data-lucide="calendar" style="width:18px;height:18px; color:var(--color-accent);"></i>
+              <span>Book Space</span>
+            </button>
+          </div>
+
+          <!-- Hero Metrics Strip -->
+          <div class="hero-stats-row" style="display:flex; flex-wrap:wrap; gap:1rem;">
+            <div class="hero-stat-item">
+              <span class="hero-stat-num">4.2 ★</span>
+              <span class="hero-stat-label">2,116+ Google Reviews</span>
+            </div>
+            <div class="hero-stat-item">
+              <span class="hero-stat-num" style="color:#E23744;">3.3 ★</span>
+              <span class="hero-stat-label">244 Zomato Ratings</span>
+            </div>
+            <div class="hero-stat-item">
+              <span class="hero-stat-num">₹1,200</span>
+              <span class="hero-stat-label">For Two People (approx.)</span>
+            </div>
+            <div class="hero-stat-item">
+              <span class="hero-stat-num">8 AM–11 PM</span>
+              <span class="hero-stat-label">Open Every Day</span>
+            </div>
+          </div>
+
+          <!-- Official Zomato Cuisine Tags Strip -->
+          <div class="cuisine-tags-bar">
+            <span class="cuisine-tags-label">Cuisines:</span>
+            <a href="#menu" class="cuisine-pill">☕ Cafe</a>
+            <a href="#menu" class="cuisine-pill">🍝 Italian</a>
+            <a href="#menu" class="cuisine-pill">🥐 Continental</a>
+            <a href="#menu" class="cuisine-pill">🍰 Desserts</a>
+            <a href="#menu" class="cuisine-pill">🥤 Shakes</a>
+            <a href="#menu" class="cuisine-pill">🥧 Handcrafted Pies</a>
+          </div>
+        </div>
+
+        <!-- Hero Visual Media & Floating Badges -->
+        <div class="hero-visual-wrap">
+          <div class="hero-main-card" id="hero-tilt-card">
+            <img src="assets/zomato_hero.jpg" alt="Paper and Pie cafe 100 Feet Road Indiranagar entrance" class="hero-main-img" fetchpriority="high">
+            <div class="hero-overlay-gradient"></div>
+            <div class="hero-main-card-caption">
+              <span class="hero-card-tag" style="background:#E23744; color:#fff;">Featured on Zomato</span>
+              <h3 class="hero-card-heading">842/A, Metro Pillar 55, Indiranagar</h3>
+            </div>
+          </div>
+
+          <!-- Floating Badge Top Left -->
+          <div class="floating-badge floating-badge-top">
+            <div class="badge-icon-wrap">
+              <i data-lucide="sparkles" style="width:22px;height:22px;"></i>
+            </div>
+            <div>
+              <div class="badge-content-title">Fresh Daily Pies</div>
+              <div class="badge-content-sub">Golden Butter Crusts</div>
+            </div>
+          </div>
+
+          <!-- Floating Badge Bottom Right -->
+          <div class="floating-badge floating-badge-bottom">
+            <div class="badge-icon-wrap" style="background:var(--color-gold-subtle); color:var(--color-gold);">
+              <i data-lucide="mic" style="width:22px;height:22px;"></i>
+            </div>
+            <div>
+              <div class="badge-content-title">Podcast &amp; Work Pods</div>
+              <div class="badge-content-sub">Acoustic &amp; 1Gbps WiFi</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ABOUT SECTION ("WHERE STORIES MEET FLAVORS")
+         ========================================================================== -->
+    <section class="section about-section" id="about">
+      <div class="container about-grid">
+        <div class="reveal-left">
+          <span class="section-label">Our Philosophy &amp; Soul</span>
+          <h2 class="section-title text-pressure-title" id="text-pressure-title" data-text="Where Stories Meet Flavors">Where Stories Meet Flavors</h2>
+          <p class="section-description">
+            Paper and Pie is more than just a café – it's a sanctuary for book lovers, coffee enthusiasts, and pie aficionados. With locations across Bangalore's thriving hotspots including Whitefield, Indiranagar, and HSR Layout, we combine the warmth of freshly baked goods with the charm of a reading nook.
+          </p>
+          <p class="section-description">
+            Our handcrafted pies, artisanal coffee, and carefully curated library create the perfect ambiance for conversations, creativity, and contemplation.
+          </p>
+          <p class="section-description" style="font-weight: 500; color: var(--color-text-primary);">
+            Work-friendly spaces with conference rooms and podcast/recording facilities make us the ideal spot for professionals, creators, and remote workers seeking a productive yet cozy environment.
+          </p>
+
+          <!-- Key Features Highlights -->
+          <div class="about-features-list">
+            <div class="about-feature-item">
+              <div class="about-feature-icon">
+                <i data-lucide="book-open"></i>
+              </div>
+              <div class="about-feature-text">
+                <h4>Curated Library</h4>
+                <p>Thoughtfully selected titles spanning fiction, design &amp; thought leadership.</p>
+              </div>
+            </div>
+
+            <div class="about-feature-item">
+              <div class="about-feature-icon">
+                <i data-lucide="coffee"></i>
+              </div>
+              <div class="about-feature-text">
+                <h4>Artisanal Coffee</h4>
+                <p>Single origin beans locally roasted with 16-hour slow steeped cold brews.</p>
+              </div>
+            </div>
+
+            <div class="about-feature-item">
+              <div class="about-feature-icon">
+                <i data-lucide="pie-chart"></i>
+              </div>
+              <div class="about-feature-text">
+                <h4>Handcrafted Bakery</h4>
+                <p>Signature flaky crust pies and French tarts baked fresh every sunrise.</p>
+              </div>
+            </div>
+
+            <div class="about-feature-item">
+              <div class="about-feature-icon">
+                <i data-lucide="video"></i>
+              </div>
+              <div class="about-feature-text">
+                <h4>Creator Suites</h4>
+                <p>Private conference pods and broadcast-ready podcast recording stations.</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="#conference" class="btn-secondary" style="margin-top:0.5rem;">
+            <span>Explore Creator Spaces</span>
+            <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
+          </a>
+        </div>
+
+        <!-- Mosaic Image Showcase -->
+        <div class="about-gallery-mosaic reveal-right">
+          <div class="mosaic-img-card">
+            <img src="assets/074d20fef88281418de05242a7c133133148160d.jpg" alt="Coffee and books at Paper and Pie sanctuary" loading="lazy">
+            <span class="mosaic-badge">📖 The Reading Corner</span>
+          </div>
+          <div class="mosaic-img-card">
+            <img src="assets/d94eeff35f94f5edd03700f4a6885b9855841d81.jpg" alt="Friends and creators enjoying at Paper and Pie" loading="lazy">
+            <span class="mosaic-badge">🤝 Community &amp; Work</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ARTISAN MENU SECTION (DRIBBLE CATEGORY TABS & RICH CARDS)
+         ========================================================================== -->
+    <section class="section menu-section" id="menu">
+      <div class="container">
+        <div class="menu-header-center">
+          <span class="section-label">Culinary &amp; Roastery Excellence</span>
+          <h2 class="section-title">Our Handcrafted Menu</h2>
+          <p class="section-description">Crafted with love, served with care. Every pie is rolled by hand, every roast measured to precision.</p>
+        </div>
+
+        <!-- Chef's Spotlight: React Bits 3D Depth Carousel -->
+        <div class="menu-carousel-wrapper reveal">
+          <div class="menu-carousel-header">
+            <span class="carousel-eyebrow">✦ Interactive 3D Showcase</span>
+            <h3 class="carousel-title">Chef's Signature Selections</h3>
+            <p class="carousel-hint">Drag, mousewheel, or use arrows to flip through our signature creations in 3D</p>
+          </div>
+
+          <div class="depth-carousel-container" style="height: 440px; position: relative;">
+            <div id="depth-carousel" class="depth-carousel" style="--dc-perspective: 1400px;" role="group" aria-label="3D Menu Depth Carousel" tabindex="0">
+              <div class="depth-carousel__stage" id="dc-stage">
+                <!-- Dynamically populated cards with Paper & Pie items -->
+              </div>
+              <button type="button" class="depth-carousel__arrow depth-carousel__arrow--prev" id="dc-prev" aria-label="Previous slide">
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                  <path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <button type="button" class="depth-carousel__arrow depth-carousel__arrow--next" id="dc-next" aria-label="Next slide">
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                  <path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <div class="depth-carousel__dots" id="dc-dots" role="tablist" aria-label="Slides"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Category Tabs -->
+        <div class="menu-filter-bar" role="tablist" aria-label="Menu Categories">
+          <button class="menu-tab-btn active" data-category="all" role="tab" aria-selected="true">
+            <i data-lucide="layout-grid" style="width:16px;height:16px;"></i>
+            <span>All Offerings</span>
+          </button>
+          <button class="menu-tab-btn" data-category="Signature Pies" role="tab" aria-selected="false">
+            <i data-lucide="pie-chart" style="width:16px;height:16px;"></i>
+            <span>Signature Pies</span>
+          </button>
+          <button class="menu-tab-btn" data-category="Italian &amp; Mains" role="tab" aria-selected="false">
+            <i data-lucide="utensils" style="width:16px;height:16px;"></i>
+            <span>Italian &amp; Mains</span>
+          </button>
+          <button class="menu-tab-btn" data-category="Continental &amp; Bites" role="tab" aria-selected="false">
+            <i data-lucide="croissant" style="width:16px;height:16px;"></i>
+            <span>Continental &amp; Bites</span>
+          </button>
+          <button class="menu-tab-btn" data-category="Coffee &amp; Beverages" role="tab" aria-selected="false">
+            <i data-lucide="coffee" style="width:16px;height:16px;"></i>
+            <span>Coffee &amp; Beverages</span>
+          </button>
+          <button class="menu-tab-btn" data-category="Desserts &amp; Shakes" role="tab" aria-selected="false">
+            <i data-lucide="sparkles" style="width:16px;height:16px;"></i>
+            <span>Desserts &amp; Shakes</span>
+          </button>
+        </div>
+
+        <!-- Menu Search Input -->
+        <div class="menu-search-wrapper">
+          <i data-lucide="search" class="menu-search-icon" style="width:18px;height:18px;"></i>
+          <input type="text" id="menu-search" class="menu-search-input" placeholder="Search pies, ravioli, cold brews, croissants, sourdough..." aria-label="Search menu items">
+        </div>
+
+        <!-- Dynamic Menu Container -->
+        <div id="menu-items-container">
+          <!-- Rendered dynamically by JavaScript with authentic Paper & Pie items -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         OFFICIAL ZOMATO PHOTO GALLERY SECTION
+         ========================================================================== -->
+    <section class="section gallery-section" id="gallery">
+      <div class="container">
+        <div class="menu-header-center reveal">
+          <span class="section-label" style="color:#E23744;">Visual Sanctuary</span>
+          <h2 class="section-title">Official Zomato &amp; Guest Gallery</h2>
+          <p class="section-description">
+            Authentic moments captured at 842/A, Metro Pillar 55, 100 Feet Road, Indiranagar. Click any frame to inspect the sanctuary in high fidelity.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <!-- Card 1: Hero Exterior -->
+          <div class="gallery-card reveal reveal-delay-1" onclick="openLightbox('assets/zomato_hero.jpg', 'Iconic Facade & Outdoor Verandah', '100 Feet Road, Indiranagar • Zomato Featured')">
+            <img src="assets/zomato_hero.jpg" alt="Paper & Pie facade 100 Feet Road Indiranagar" class="gallery-card-img" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-tag"><i data-lucide="camera" style="width:12px;height:12px;"></i> Exterior &amp; Patio</span>
+              <h4 class="gallery-caption">100 Feet Road Sanctuary</h4>
+              <span class="gallery-view-hint"><i data-lucide="maximize-2" style="width:12px;height:12px;"></i> Click to enlarge</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Interior Library -->
+          <div class="gallery-card reveal reveal-delay-2" onclick="openLightbox('assets/zomato_interior.jpg', 'Sunlit Reading Nook & Library Table', 'Spacious co-working seating & curated books')">
+            <img src="assets/zomato_interior.jpg" alt="Paper & Pie library and dining tables" class="gallery-card-img" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-tag"><i data-lucide="book-open" style="width:12px;height:12px;"></i> Library &amp; Workspace</span>
+              <h4 class="gallery-caption">Sunlit Creator Tables</h4>
+              <span class="gallery-view-hint"><i data-lucide="maximize-2" style="width:12px;height:12px;"></i> Click to enlarge</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Ambiance & Lounge -->
+          <div class="gallery-card reveal reveal-delay-3" onclick="openLightbox('assets/zomato_ambiance.jpg', 'Ambient Seating & Coffee Bar', 'Acoustic comfort, artisan roastery vibes')">
+            <img src="assets/zomato_ambiance.jpg" alt="Paper & Pie warm cafe ambiance" class="gallery-card-img" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-tag"><i data-lucide="coffee" style="width:12px;height:12px;"></i> Warm Ambiance</span>
+              <h4 class="gallery-caption">Espresso Bar &amp; Nooks</h4>
+              <span class="gallery-view-hint"><i data-lucide="maximize-2" style="width:12px;height:12px;"></i> Click to enlarge</span>
+            </div>
+          </div>
+
+          <!-- Card 4: Artisan Kitchen & Food -->
+          <div class="gallery-card reveal reveal-delay-4" onclick="openLightbox('assets/zomato_food.png', 'Gourmet Kitchen & Fresh Bakes', 'Artisanal ravioli, fresh pies, sourdough & beverages')">
+            <img src="assets/zomato_food.png" alt="Paper & Pie culinary specialties" class="gallery-card-img" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-tag"><i data-lucide="utensils" style="width:12px;height:12px;"></i> Bakery &amp; Kitchen</span>
+              <h4 class="gallery-caption">Culinary Craft &amp; Sourdough</h4>
+              <span class="gallery-view-hint"><i data-lucide="maximize-2" style="width:12px;height:12px;"></i> Click to enlarge</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Zomato Gallery CTA Strip -->
+        <div class="gallery-cta-bar reveal">
+          <div class="gallery-cta-info">
+            <div class="gallery-zomato-logo-wrap">Z</div>
+            <div>
+              <h4 style="margin:0; font-size:1.05rem; font-weight:700;">Verified Zomato Dining Listing</h4>
+              <p style="margin:0.2rem 0 0; font-size:0.85rem; color:var(--color-text-secondary);">
+                Rated 3.3 ★ by 244 diners • ₹1,200 for two • Metro Pillar 55, Indiranagar
+              </p>
+            </div>
+          </div>
+          <a href="https://www.zomato.com/bangalore/paper-and-pie-indiranagar-bangalore" target="_blank" rel="noopener noreferrer" class="btn-zomato">
+            <span>Explore Full Gallery on Zomato</span>
+            <i data-lucide="external-link" style="width:15px;height:15px;"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONFERENCE & PODCAST STUDIO SECTION
+         ========================================================================== -->
+    <section class="section conference-section" id="conference">
+      <div class="container conference-grid">
+        <!-- Visual Presentation -->
+        <div class="conference-visual-wrap">
+          <img src="assets/755e35936af8a7e9bf02720ca2df492a34263eb6.jpg" alt="Paper and Pie modern conference room with concrete table and designer chairs" class="conference-visual-img" loading="lazy">
+          <div class="conference-img-overlay"></div>
+          <div class="conference-floating-pill">
+            <i data-lucide="mic" style="width:16px;height:16px;"></i>
+            <span>Sound-Isolated Studio Space</span>
+          </div>
+        </div>
+
+        <!-- Information & Facilities Details -->
+        <div class="conference-content reveal-right">
+          <span class="section-label" style="color:var(--color-gold);">Sanctuary for Creators</span>
+          <h2 class="section-title">Book a Conference Room &amp; Podcast Studio</h2>
+          <p class="section-description">
+            Need a quiet space for your next meeting, brainstorm, or podcast recording? Our thoughtfully designed conference rooms offer the perfect blend of productivity and comfort, with great coffee an order away.
+          </p>
+
+          <!-- 4 Core Facilities Grid (Preserved exactly from data) -->
+          <div class="amenities-feature-grid">
+            <div class="amenity-card">
+              <div class="amenity-icon-box">
+                <i data-lucide="users"></i>
+              </div>
+              <div>
+                <div class="amenity-name">Seats up to 10</div>
+                <div class="amenity-sub">Spacious ergonomic seating</div>
+              </div>
+            </div>
+
+            <div class="amenity-card">
+              <div class="amenity-icon-box">
+                <i data-lucide="wifi"></i>
+              </div>
+              <div>
+                <div class="amenity-name">High-speed WiFi</div>
+                <div class="amenity-sub">Dedicated Gigabit fiber</div>
+              </div>
+            </div>
+
+            <div class="amenity-card">
+              <div class="amenity-icon-box">
+                <i data-lucide="monitor"></i>
+              </div>
+              <div>
+                <div class="amenity-name">Display Screen</div>
+                <div class="amenity-sub">4K presentation monitor</div>
+              </div>
+            </div>
+
+            <div class="amenity-card">
+              <div class="amenity-icon-box">
+                <i data-lucide="mic"></i>
+              </div>
+              <div>
+                <div class="amenity-name">Podcast Ready</div>
+                <div class="amenity-sub">Acoustic treatment &amp; audio</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="conference-cta-row">
+            <a href="tel:+919035700874" class="btn-primary" style="background:linear-gradient(135deg, #B85C38, #d47b56);">
+              <i data-lucide="phone" style="width:18px;height:18px;"></i>
+              <span>Call to Reserve (+91 90357 00874)</span>
+            </a>
+            <button class="btn-secondary" onclick="openReservationModal('conference')">
+              <span>Book Online Instant</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ==========================================================================
+         BANGALORE LOCATIONS SECTION (INTERACTIVE EXPLORER)
+         ========================================================================== -->
+    <section class="section locations-section" id="locations">
+      <div class="container">
+        <div class="menu-header-center reveal">
+          <span class="section-label">Find Your Nearest Haven</span>
+          <h2 class="section-title">Our Bangalore Locations</h2>
+          <p class="section-description">Find us at three convenient spots across Bangalore. Open 7 days a week from 8:00 AM to 10:00 PM.</p>
+        </div>
+
+        <div class="locations-grid">
+          <!-- 1. Indiranagar -->
+          <div class="location-card highlight-card reveal reveal-delay-1">
+            <div class="location-status-badge">
+              <span class="status-dot"></span>
+              <span class="live-status-text">Open Now • Till 11:00 PM</span>
+            </div>
+            <h3 class="location-name">Indiranagar</h3>
+            <div class="location-detail-group">
+              <div class="location-detail-row">
+                <i data-lucide="map-pin" class="location-icon"></i>
+                <div>
+                  <p style="font-weight:600; color:var(--color-text-primary);">Metro Pillar Number 55, 842/A</p>
+                  <p>100 Feet Rd, Indira Nagar 1st Stage, H Colony, Indiranagar, Bengaluru, Karnataka 560038</p>
+                </div>
+              </div>
+              <div class="location-detail-row">
+                <i data-lucide="clock" class="location-icon"></i>
+                <p>Mon-Sun: 8:00 AM – 11:00 PM</p>
+              </div>
+              <div class="location-detail-row">
+                <i data-lucide="wallet" class="location-icon"></i>
+                <p><strong style="color:var(--color-accent);">₹1,200 for two</strong> • 3.3 ★ Zomato (244) • 4.2 ★ Google</p>
+              </div>
+            </div>
+            <div class="location-actions">
+              <a href="https://maps.google.com/?q=Paper+and+Pie+Indiranagar+Bangalore" target="_blank" rel="noopener noreferrer" class="btn-loc-action btn-primary" style="padding:0.6rem 0.8rem;">
+                <i data-lucide="navigation" style="width:15px;height:15px;"></i>
+                <span>Directions</span>
+              </a>
+              <a href="tel:+919035700878" class="btn-loc-action btn-secondary" style="padding:0.6rem 0.8rem;">
+                <i data-lucide="phone" style="width:15px;height:15px;"></i>
+                <span>Call Cafe</span>
+              </a>
+              <a href="https://www.zomato.com/bangalore/paper-and-pie-indiranagar-bangalore" target="_blank" rel="noopener noreferrer" class="btn-loc-action btn-zomato" style="padding:0.6rem 0.85rem; font-size:0.8rem;">
+                <i data-lucide="external-link" style="width:14px;height:14px;"></i>
+                <span>Zomato</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 2. Whitefield -->
+          <div class="location-card reveal reveal-delay-2">
+            <div class="location-status-badge">
+              <span class="status-dot"></span>
+              <span class="live-status-text">Open Now • Till 10:00 PM</span>
+            </div>
+            <h3 class="location-name">Whitefield</h3>
+            <div class="location-detail-group">
+              <div class="location-detail-row">
+                <i data-lucide="map-pin" class="location-icon"></i>
+                <div>
+                  <p style="font-weight:600; color:var(--color-text-primary);">G Floor, RMZ ECOWORLD</p>
+                  <p>Campus 31, Adarsh Palm Retreat Villas, Bellandur, Bengaluru, Karnataka 560103</p>
+                </div>
+              </div>
+              <div class="location-detail-row">
+                <i data-lucide="clock" class="location-icon"></i>
+                <p>Mon-Sun: 8:00 AM – 11:00 PM</p>
+              </div>
+            </div>
+            <div class="location-actions">
+              <a href="https://maps.google.com/?q=Paper+and+Pie+RMZ+Ecoworld+Whitefield" target="_blank" rel="noopener noreferrer" class="btn-loc-action btn-primary" style="padding:0.6rem 0.8rem;">
+                <i data-lucide="navigation" style="width:15px;height:15px;"></i>
+                <span>Directions</span>
+              </a>
+              <a href="tel:+919035700874" class="btn-loc-action btn-secondary" style="padding:0.6rem 0.8rem;">
+                <i data-lucide="phone" style="width:15px;height:15px;"></i>
+                <span>Call Cafe</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 3. HSR Layout -->
+          <div class="location-card reveal reveal-delay-3">
+            <div class="location-status-badge">
+              <span class="status-dot"></span>
+              <span class="live-status-text">Open Now • Till 10:00 PM</span>
+            </div>
+            <h3 class="location-name">HSR Layout</h3>
+            <div class="location-detail-group">
+              <div class="location-detail-row">
+                <i data-lucide="map-pin" class="location-icon"></i>
+                <div>
+                  <p style="font-weight:600; color:var(--color-text-primary);">348, GF, 17th Main</p>
+                  <p>15th Cross Rd, opp. to Sector 4 Park, Sector 4, HSR Layout, Bengaluru, Karnataka 560102</p>
+                </div>
+              </div>
+              <div class="location-detail-row">
+                <i data-lucide="clock" class="location-icon"></i>
+                <p>Mon-Sun: 8:00 AM – 11:00 PM</p>
+              </div>
+            </div>
+            <div class="location-actions">
+              <a href="https://maps.google.com/?q=Paper+and+Pie+HSR+Layout+Bangalore" target="_blank" rel="noopener noreferrer" class="btn-loc-action btn-primary" style="padding:0.6rem 0.8rem;">
+                <i data-lucide="navigation" style="width:15px;height:15px;"></i>
+                <span>Directions</span>
+              </a>
+              <a href="tel:+919035700874" class="btn-loc-action btn-secondary" style="padding:0.6rem 0.8rem;">
+                <i data-lucide="phone" style="width:15px;height:15px;"></i>
+                <span>Call Cafe</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SOCIAL MEDIA UPDATES SECTION
+         ========================================================================== -->
+    <section class="section social-section" id="social">
+      <div class="container">
+        <div class="menu-header-center reveal">
+          <span class="section-label">Community &amp; Social Updates</span>
+          <h2 class="section-title">What Bangalore Is Saying</h2>
+          <p class="section-description">
+            From heartfelt Google reviews to viral Reddit meetups &mdash; Paper &amp; Pie is where Bangalore gathers, one cup at a time.
+          </p>
+        </div>
+
+        <!-- ── SOCIAL FEED GRID ─────────────────────────────── -->
+        <div class="social-feed-grid">
+
+          <!-- GOOGLE REVIEW CARD 1 -->
+          <article class="social-card social-card--google reveal reveal-delay-1">
+            <div class="social-card-header">
+              <div class="social-platform-badge social-badge--google">
+                <!-- Google G SVG -->
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                  <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                  <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+                  <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                </svg>
+                <span>Google Review</span>
+              </div>
+              <time class="social-card-time">2 weeks ago</time>
+            </div>
+            <div class="social-card-reviewer">
+              <div class="reviewer-avatar reviewer-avatar--amber">A</div>
+              <div>
+                <p class="reviewer-name">Amith Babu</p>
+                <div class="star-rating" aria-label="5 out of 5 stars">
+                  <span class="star star--filled">★</span><span class="star star--filled">★</span><span class="star star--filled">★</span><span class="star star--filled">★</span><span class="star star--filled">★</span>
+                </div>
+              </div>
+            </div>
+            <blockquote class="social-card-quote">
+              &ldquo;Serene and calm ambiance with quality music, food and service. A truly wonderful spot in Indiranagar.&rdquo;
+            </blockquote>
+            <div class="social-card-tags">
+              <span class="social-tag">☕ Coffee</span>
+              <span class="social-tag">🎵 Ambiance</span>
+              <span class="social-tag">🍳 Food</span>
+            </div>
+          </article>
+
+          <!-- ZOMATO VERIFIED LISTING CARD -->
+          <article class="social-card social-card--zomato reveal reveal-delay-2">
+            <div class="social-card-header">
+              <div class="social-platform-badge social-badge--zomato">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/>
+                </svg>
+                <span>Zomato Verified</span>
+              </div>
+              <div class="zomato-rating-pill">
+                <span>3.3</span>
+                <span>★</span>
+              </div>
+            </div>
+            <div class="social-card-reviewer">
+              <div class="reviewer-avatar reviewer-avatar--zomato">Z</div>
+              <div>
+                <p class="reviewer-name">Paper &amp; Pie • Indiranagar</p>
+                <div style="font-size:0.75rem; color:var(--color-text-muted);">244 Dining Ratings • Dine-In Sanctuary</div>
+              </div>
+            </div>
+            <div class="zomato-stat-card">
+              <span class="zomato-cost-label">Avg. Cost:</span>
+              <span class="zomato-cost-val">₹1,200 for two</span>
+              <span style="font-size:0.75rem; color:var(--color-text-muted); margin-left:auto;">Cash &amp; Cards</span>
+            </div>
+            <blockquote class="social-card-quote" style="border-left-color:#E23744;">
+              &ldquo;Popular for peaceful workspace ambiance, handcrafted artisan pies, wild mushroom ravioli &amp; specialty cold brews.&rdquo;
+            </blockquote>
+            <div class="social-card-tags">
+              <span class="social-tag">☕ Cafe</span>
+              <span class="social-tag">🍝 Italian</span>
+              <span class="social-tag">🥐 Continental</span>
+              <span class="social-tag">🍰 Desserts</span>
+              <span class="social-tag">🥤 Shakes</span>
+            </div>
+            <div style="margin-top:1.25rem;">
+              <a href="https://www.zomato.com/bangalore/paper-and-pie-indiranagar-bangalore" target="_blank" rel="noopener noreferrer" class="social-card-link" style="color:#E23744; font-weight:700;">
+                View on Zomato <i data-lucide="external-link" style="width:12px;height:12px;"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- REDDIT COMMUNITY SPOTLIGHT -->
+          <article class="social-card social-card--reddit reveal reveal-delay-2">
+            <div class="social-card-header">
+              <div class="social-platform-badge social-badge--reddit">
+                <!-- Reddit mascot-inspired icon -->
+                <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="10" cy="10" r="10" fill="#FF4500"/>
+                  <path d="M16.67 10a1.46 1.46 0 00-2.47-1 7.12 7.12 0 00-3.85-1.23l.65-3.08 2.13.45a1 1 0 101.07-.94 1 1 0 00-.96.61l-2.38-.5a.27.27 0 00-.32.2l-.73 3.43a7.14 7.14 0 00-3.89 1.23 1.46 1.46 0 10-1.61 2.39 2.87 2.87 0 000 .44c0 2.24 2.61 4.06 5.83 4.06s5.83-1.82 5.83-4.06a2.87 2.87 0 000-.44 1.46 1.46 0 00.61-1.56zM7.27 11a1 1 0 111 1 1 1 0 01-1-1zm5.57 2.65a3.56 3.56 0 01-2.84.57 3.56 3.56 0 01-2.84-.57.27.27 0 01.38-.38 3 3 0 002.46.44 3 3 0 002.46-.44.27.27 0 01.38.38zm-.16-1.65a1 1 0 111-1 1 1 0 01-1 1z" fill="white"/>
+                </svg>
+                <span>Reddit · r/indiranagar</span>
+              </div>
+              <time class="social-card-time">3 weeks ago</time>
+            </div>
+            <div class="reddit-upvote-row">
+              <div class="reddit-upvote-btn">
+                <i data-lucide="arrow-up" style="width:13px;height:13px;"></i>
+                <span>23 upvotes</span>
+              </div>
+              <span class="reddit-flair">📅 Event</span>
+            </div>
+            <h4 class="social-card-title">[Event] Paper and Pie Coffee Meet-up — Indiranagar Today</h4>
+            <p class="social-card-body">Bengaluru coffee lovers gathering at Paper &amp; Pie, Indiranagar this weekend. Come join the community — great vibes, amazing cortados &amp; book swaps!</p>
+            <a href="https://www.reddit.com/r/indiranagar/comments/1w8mx5p/" target="_blank" rel="noopener noreferrer" class="social-card-link">
+              View thread &amp; 28 comments <i data-lucide="external-link" style="width:12px;height:12px;"></i>
+            </a>
+          </article>
+
+          <!-- GOOGLE REVIEW CARD 2 -->
+          <article class="social-card social-card--google reveal reveal-delay-3">
+            <div class="social-card-header">
+              <div class="social-platform-badge social-badge--google">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                  <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                  <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+                  <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.47 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                </svg>
+                <span>Google Review</span>
+              </div>
+              <time class="social-card-time">8 months ago</time>
+            </div>
+            <div class="social-card-reviewer">
+              <div class="reviewer-avatar reviewer-avatar--green">P</div>
+              <div>
+                <p class="reviewer-name">Pooja Chandak</p>
+                <div class="star-rating" aria-label="5 out of 5 stars">
+                  <span class="star star--filled">★</span><span class="star star--filled">★</span><span class="star star--filled">★</span><span class="star star--filled">★</span><span class="star star--filled">★</span>
+                </div>
+              </div>
+            </div>
+            <blockquote class="social-card-quote">
+              &ldquo;We ordered Ravioli, Classic Pancakes, coffee, tiramisu and everything was tasty. Beautiful, work-friendly space &mdash; will definitely be back!&rdquo;
+            </blockquote>
+            <div class="social-card-tags">
+              <span class="social-tag">🍝 Ravioli</span>
+              <span class="social-tag">🥞 Pancakes</span>
+              <span class="social-tag">☕ Tiramisu</span>
+            </div>
+          </article>
+
+          <!-- AI REVIEW SUMMARY CARD -->
+          <article class="social-card social-card--summary reveal reveal-delay-1">
+            <div class="social-card-header">
+              <div class="social-platform-badge social-badge--ai">
+                <i data-lucide="sparkles" style="width:13px;height:13px;"></i>
+                <span>AI Review Summary</span>
+              </div>
+              <div class="google-rating-inline">
+                <span class="rating-big">4.2</span>
+                <span class="star star--filled">★</span>
+                <span class="rating-count">(2,116)</span>
+              </div>
+            </div>
+            <p class="social-card-ai-summary">
+              People say this cafe offers <strong>delicious coffee, freshly baked croissants</strong>, and a variety of food options like pasta and pies. They also highlight the <strong>cozy, work-friendly ambiance</strong> and the attentive staff.
+            </p>
+            <div class="review-bar-group">
+              <div class="review-bar-row"><span>5 ★</span><div class="review-bar"><div class="review-bar-fill" style="width:54%"></div></div><span class="review-bar-pct">54%</span></div>
+              <div class="review-bar-row"><span>4 ★</span><div class="review-bar"><div class="review-bar-fill" style="width:25%; background: #FBBC05;"></div></div><span class="review-bar-pct">25%</span></div>
+              <div class="review-bar-row"><span>3 ★</span><div class="review-bar"><div class="review-bar-fill" style="width:11%; background: #F4A436;"></div></div><span class="review-bar-pct">11%</span></div>
+              <div class="review-bar-row"><span>2 ★</span><div class="review-bar"><div class="review-bar-fill" style="width:5%; background: #EA8735;"></div></div><span class="review-bar-pct">5%</span></div>
+              <div class="review-bar-row"><span>1 ★</span><div class="review-bar"><div class="review-bar-fill" style="width:5%; background: #EA4335;"></div></div><span class="review-bar-pct">5%</span></div>
+            </div>
+            <a href="https://www.google.com/maps/place/Paper+%26+Pie/" target="_blank" rel="noopener noreferrer" class="social-card-link">
+              Read all reviews on Google <i data-lucide="external-link" style="width:12px;height:12px;"></i>
+            </a>
+          </article>
+
+          <!-- GOOGLE REVIEW CARD 3 -->
+          <article class="social-card social-card--google reveal reveal-delay-2">
+            <div class="social-card-header">
+              <div class="social-platform-badge social-badge--google">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                  <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                  <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+                  <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.47 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                </svg>
+                <span>Google Review</span>
+              </div>
+              <time class="social-card-time">1 month ago</time>
+            </div>
+            <div class="social-card-reviewer">
+              <div class="reviewer-avatar reviewer-avatar--blue">V</div>
+              <div>
+                <p class="reviewer-name">Vinay K</p>
+                <div class="star-rating" aria-label="4 out of 5 stars">
+                  <span class="star star--filled">★</span><span class="star star--filled">★</span><span class="star star--filled">★</span><span class="star star--filled">★</span><span class="star">★</span>
+                </div>
+              </div>
+            </div>
+            <blockquote class="social-card-quote">
+              &ldquo;Great place to work from. The English breakfast with scrambled eggs is an absolute must-try. Cozy corner seating, peaceful atmosphere — a true Indiranagar gem.&rdquo;
+            </blockquote>
+            <div class="social-card-tags">
+              <span class="social-tag">🍳 English Breakfast</span>
+              <span class="social-tag">💻 Work-Friendly</span>
+            </div>
+          </article>
+
+          <!-- INSTAGRAM CTA WIDE CARD -->
+          <article class="social-card social-card--instagram reveal reveal-delay-3">
+            <div class="insta-cta-inner">
+              <div class="insta-cta-left">
+                <div class="social-platform-badge social-badge--instagram">
+                  <i data-lucide="instagram" style="width:13px;height:13px;"></i>
+                  <span>Instagram</span>
+                </div>
+                <h4 class="insta-cta-handle">@paperandpiebangalore</h4>
+                <p class="insta-cta-tagline">Daily bakes &bull; Latte art &bull; Book recs &bull; Community pop-ups</p>
+                <a href="https://www.instagram.com/paperandpiebangalore/" target="_blank" rel="noopener noreferrer" class="btn-primary" style="margin-top:1rem; padding:0.6rem 1.25rem; font-size:0.88rem;">
+                  <i data-lucide="instagram" style="width:15px;height:15px;"></i>
+                  <span>Follow Us</span>
+                </a>
+              </div>
+              <div class="insta-mini-grid">
+                <a href="https://www.instagram.com/paperandpiebangalore/" target="_blank" rel="noopener noreferrer" class="insta-mini-img">
+                  <img src="assets/19e2d91896509b4d003b60eec8e2bee1578dafc0.jpg" alt="Paper and Pie Instagram moment" loading="lazy">
+                  <div class="insta-mini-overlay"><i data-lucide="instagram"></i></div>
+                </a>
+                <a href="https://www.instagram.com/paperandpiebangalore/" target="_blank" rel="noopener noreferrer" class="insta-mini-img">
+                  <img src="assets/152ccc6ff05c173d33b5b3ee15d46901f9c025c8.jpg" alt="Barista art at Paper and Pie" loading="lazy">
+                  <div class="insta-mini-overlay"><i data-lucide="instagram"></i></div>
+                </a>
+                <a href="https://www.instagram.com/paperandpiebangalore/" target="_blank" rel="noopener noreferrer" class="insta-mini-img">
+                  <img src="assets/0dc56c5989ad5cb71ecd2af2543203b701137f01.jpg" alt="Food at Paper and Pie" loading="lazy">
+                  <div class="insta-mini-overlay"><i data-lucide="instagram"></i></div>
+                </a>
+                <a href="https://www.instagram.com/paperandpiebangalore/" target="_blank" rel="noopener noreferrer" class="insta-mini-img">
+                  <img src="assets/074d20fef88281418de05242a7c133133148160d.jpg" alt="Coffee and books at Paper and Pie" loading="lazy">
+                  <div class="insta-mini-overlay"><i data-lucide="instagram"></i></div>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div><!-- /.social-feed-grid -->
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT SECTION
+         ========================================================================== -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="menu-header-center">
+          <span class="section-label" style="color:var(--color-gold);">We'd Love to Welcome You</span>
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-description">Have a question about hosting an event, booking a podcast session, or ordering catering? Reach out to us anytime.</p>
+        </div>
+
+        <div class="contact-cards-grid">
+          <!-- Direct Phone -->
+          <div class="contact-card">
+            <div class="contact-icon-large">
+              <i data-lucide="phone"></i>
+            </div>
+            <h3>Call Us</h3>
+            <p style="color:var(--color-text-secondary); margin-bottom:0.75rem; font-size:0.9rem;">Direct reservation lines (Indiranagar &amp; Bangalore)</p>
+            <div style="display:flex; flex-direction:column; gap:0.35rem;">
+              <a href="tel:+919035700878">+91 90357 00878 (Indiranagar)</a>
+              <a href="tel:+919035700874">+91 90357 00874 (General Inquiries)</a>
+            </div>
+          </div>
+
+          <!-- Zomato Listing -->
+          <div class="contact-card">
+            <div class="contact-icon-large" style="background:rgba(226,55,68,0.18); color:#E23744;">
+              <i data-lucide="utensils"></i>
+            </div>
+            <h3>Zomato Listing</h3>
+            <p style="color:var(--color-text-secondary); margin-bottom:0.75rem; font-size:0.9rem;">Check 3.3 ★ diner ratings, menu &amp; gallery</p>
+            <a href="https://www.zomato.com/bangalore/paper-and-pie-indiranagar-bangalore" target="_blank" rel="noopener noreferrer" style="color:#E23744; font-weight:600;">Paper And Pie on Zomato</a>
+          </div>
+
+          <!-- Instagram -->
+          <div class="contact-card">
+            <div class="contact-icon-large">
+              <i data-lucide="instagram"></i>
+            </div>
+            <h3>Follow Us</h3>
+            <p style="color:var(--color-text-secondary); margin-bottom:0.75rem; font-size:0.9rem;">Tag your stories and join our creator circle</p>
+            <a href="https://www.instagram.com/paperandpiebangalore/" target="_blank" rel="noopener noreferrer">@paperandpiebangalore</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       SITE FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main-grid">
+        <div class="footer-brand">
+          <img src="assets/142dfedc7e25e8410d68aa7de8a95856b1310416.jpg" alt="Paper and Pie Logo" style="height:44px; margin-bottom:1.25rem; filter:brightness(0) invert(1);" loading="lazy">
+          <p>
+            A sanctuary for book lovers, coffee purists, and pie aficionados in Bangalore. Where stories meet flavors every single day.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Exploration</h5>
+          <div class="footer-links">
+            <a href="#about">About Our Sanctuary</a>
+            <a href="#menu">Artisanal Bakery &amp; Coffee</a>
+            <a href="#conference">Conference &amp; Podcast Studio</a>
+            <a href="#locations">Bangalore Branches</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Locations</h5>
+          <div class="footer-links">
+            <a href="#locations">Indiranagar (100 Ft Rd)</a>
+            <a href="#locations">Whitefield (RMZ Ecoworld)</a>
+            <a href="#locations">HSR Layout (Sector 4)</a>
+            <span style="font-size:0.85rem; color:var(--color-gold);">Mon - Sun: 8 AM – 11 PM</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Reservations</h5>
+          <p style="font-size:0.88rem; margin-bottom:1rem;">Book conference suites, podcast recordings, or table inquiries directly.</p>
+          <a href="tel:+919035700874" class="btn-primary" style="padding:0.6rem 1.2rem; font-size:0.85rem;">
+            <i data-lucide="phone" style="width:14px;height:14px;"></i>
+            <span>+91 90357 00874</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="current-year">2026</span> Paper &amp; Pie. All rights reserved.</p>
+        <p>Crafted with care in Bangalore • Where Stories Meet Flavors</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       INTERACTIVE RESERVATION MODAL (MODERN CSS DIALOG)
+       ========================================================================== -->
+  <dialog id="reservation-modal" class="custom-modal">
+    <div class="modal-header">
+      <h3 class="modal-title">Reserve at Paper &amp; Pie</h3>
+      <button class="modal-close-btn" onclick="closeReservationModal()" aria-label="Close dialog">
+        <i data-lucide="x" style="width:18px;height:18px;"></i>
+      </button>
+    </div>
+
+    <form id="reservation-form" onsubmit="handleReservationSubmit(event)">
+      <div class="form-group">
+        <label class="form-label" for="res-location">Select Bangalore Location</label>
+        <select id="res-location" class="form-control" required>
+          <option value="Indiranagar">Indiranagar (100 Feet Rd)</option>
+          <option value="Whitefield">Whitefield (RMZ Ecoworld)</option>
+          <option value="HSR Layout">HSR Layout (Sector 4)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="res-space">Space Type</label>
+        <select id="res-space" class="form-control" required>
+          <option value="Conference Room (Up to 10 pax)">Conference Room (Up to 10 Seats • 4K Screen &amp; WiFi)</option>
+          <option value="Podcast & Recording Studio">Podcast &amp; Recording Studio (Acoustic Treated)</option>
+          <option value="Co-Working Quiet Table">Quiet Reading / Work Table (1-2 Pax)</option>
+          <option value="Cafe Dining Table">Cafe Dining Table (Family / Friends)</option>
+        </select>
+      </div>
+
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label class="form-label" for="res-name">Your Full Name</label>
+          <input type="text" id="res-name" class="form-control" placeholder="Mithun" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="res-phone">Phone Number</label>
+          <input type="tel" id="res-phone" class="form-control" placeholder="+91 98765 43210" required>
+        </div>
+      </div>
+
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label class="form-label" for="res-date">Preferred Date</label>
+          <input type="date" id="res-date" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="res-time">Time Slot</label>
+          <select id="res-time" class="form-control" required>
+            <option value="09:00 AM">09:00 AM</option>
+            <option value="11:00 AM">11:00 AM</option>
+            <option value="02:00 PM">02:00 PM</option>
+            <option value="04:00 PM">04:00 PM</option>
+            <option value="06:00 PM">06:00 PM</option>
+            <option value="08:00 PM">08:00 PM</option>
+          </select>
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:flex-end; gap:0.75rem; margin-top:1.5rem;">
+        <button type="button" class="btn-secondary" onclick="closeReservationModal()">Cancel</button>
+        <button type="submit" class="btn-primary">
+          <span>Confirm &amp; Notify Cafe</span>
+          <i data-lucide="check" style="width:16px;height:16px;"></i>
+        </button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Quick Tasting Tray Floating Pill -->
+  <aside class="floating-order-pill" id="floating-order-pill" aria-label="Order Inquiry Tray">
+    <div class="pill-left-click" onclick="openTrayModal()" style="display:flex; align-items:center; gap:0.65rem; cursor:pointer;" title="Click to View & Edit Tray Items">
+      <span class="tray-count-badge" id="tray-count">0</span>
+      <div style="display:flex; flex-direction:column;">
+        <span style="font-weight:700; font-size:0.88rem; line-height:1.2;">Tasting Selection</span>
+        <span style="font-size:0.75rem; color:var(--color-accent); font-weight:600;" id="pill-subtotal">₹0</span>
+      </div>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <button type="button" class="btn-secondary" style="padding:0.4rem 0.85rem; font-size:0.8rem; height:36px;" onclick="openTrayModal()">
+        <i data-lucide="edit-3" style="width:14px;height:14px;"></i>
+        <span>Edit Tray</span>
+      </button>
+      <button type="button" class="btn-primary" style="padding:0.4rem 0.95rem; font-size:0.8rem; height:36px;" onclick="sendOrderInquiry()">
+        <span>WhatsApp</span>
+        <i data-lucide="send" style="width:14px;height:14px;"></i>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Interactive Edit Tray Modal / Dialog -->
+  <dialog id="tray-modal" class="tray-modal-dialog" aria-labelledby="tray-modal-title">
+    <div class="tray-modal-header">
+      <div style="display:flex; align-items:center; gap:0.65rem;">
+        <div class="tray-modal-icon-wrap">
+          <i data-lucide="shopping-bag" style="width:20px;height:20px;"></i>
+        </div>
+        <div>
+          <h3 id="tray-modal-title" style="font-family:var(--font-serif); font-size:1.3rem; margin:0;">Your Tasting Selection</h3>
+          <p style="font-size:0.82rem; color:var(--color-text-muted); margin:0;" id="tray-modal-total-count">0 items</p>
+        </div>
+      </div>
+      <button type="button" class="btn-icon" onclick="closeTrayModal()" aria-label="Close tray">
+        <i data-lucide="x" style="width:18px;height:18px;"></i>
+      </button>
+    </div>
+
+    <div class="tray-modal-body">
+      <!-- Empty State -->
+      <div id="tray-empty-state" style="text-align:center; padding:3rem 1rem; color:var(--color-text-secondary); display:none;">
+        <i data-lucide="pie-chart" style="width:48px; height:48px; margin-bottom:1rem; opacity:0.4; color:var(--color-accent);"></i>
+        <h4 style="font-family:var(--font-serif); font-size:1.35rem; margin-bottom:0.4rem;">Your Tray is Empty</h4>
+        <p style="font-size:0.92rem; max-width:280px; margin:0 auto 1.25rem;">Browse our handcrafted pies, artisanal cold brews, and light bites to curate your tasting tray.</p>
+        <button type="button" class="btn-secondary" onclick="closeTrayModal()">Browse Menu</button>
+      </div>
+
+      <!-- Item List Container -->
+      <div id="tray-items-list" class="tray-items-list"></div>
+    </div>
+
+    <!-- Tray Modal Footer -->
+    <div class="tray-modal-footer" id="tray-modal-footer">
+      <div class="tray-subtotal-box">
+        <span style="font-size:0.88rem; color:var(--color-text-secondary);">Estimated Total</span>
+        <span style="font-size:1.35rem; font-weight:800; color:var(--color-accent);" id="tray-modal-total-price">₹0</span>
+      </div>
+      <div style="display:flex; gap:0.6rem; align-items:center;">
+        <button type="button" class="btn-secondary" style="padding:0.65rem 1rem; font-size:0.88rem;" onclick="clearTray()">Clear Tray</button>
+        <button type="button" class="btn-primary" style="padding:0.65rem 1.3rem; font-size:0.88rem;" onclick="sendOrderInquiry()">
+          <span>WhatsApp Inquiry</span>
+          <i data-lucide="send" style="width:16px;height:16px;"></i>
+        </button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Official Zomato Gallery Lightbox Modal -->
+  <dialog id="gallery-lightbox-modal" class="lightbox-modal" aria-label="Photo Lightbox">
+    <div class="lightbox-content">
+      <button type="button" class="lightbox-close-btn" onclick="closeLightbox()" aria-label="Close photo preview">
+        <i data-lucide="x" style="width:20px;height:20px;"></i>
+      </button>
+      <div class="lightbox-img-wrap">
+        <img src="" alt="" id="lightbox-img" class="lightbox-img">
+      </div>
+      <div class="lightbox-bar">
+        <div>
+          <h3 id="lightbox-title" class="lightbox-title"></h3>
+          <p id="lightbox-sub" class="lightbox-sub"></p>
+        </div>
+        <a href="https://www.zomato.com/bangalore/paper-and-pie-indiranagar-bangalore" target="_blank" rel="noopener noreferrer" class="btn-zomato" style="padding:0.45rem 1rem; font-size:0.8rem;">
+          <span>View on Zomato</span>
+          <i data-lucide="external-link" style="width:13px;height:13px;"></i>
+        </a>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
